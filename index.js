@@ -5,16 +5,19 @@ const fs = require('fs-extra');
 const path = require('path')
 let date = require('date-and-time');
 const os = require('os');
-let logLocation = path.join(os.homedir(), 'Documents/logs/quoteDownloader/')
-fs.ensureDirSync(logLocation)
-const logger = require('simple-node-logger').createSimpleLogger(path.join(logLocation, "debug.log"));
-log("Program Has Started")
 
 //OPTIONS
 let host = "216.251.155.90";
 let user = "shawn";
 let password = "wolt777";
 let localDir = "/Documents/06_current_quote";
+let logLocation = "Documents/logs/quoteDownloader/";
+
+//Log Stuff
+let logLocation = path.join(os.homedir(), logLocation)
+fs.ensureDirSync(logLocation)
+const logger = require('simple-node-logger').createSimpleLogger(path.join(logLocation, "debug.log"));
+log("Program Has Started")
 
 // for date options see https://www.npmjs.com/package/node-schedule
 scheduler.scheduleJob("* * 17 * 4", () => { //Every Wednesday at 5pm

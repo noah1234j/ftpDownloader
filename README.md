@@ -13,6 +13,7 @@ Main settings for this are found at the top of the index.js file
     $ let user = "shawn";
     $ let password = "wolt777";
     $ let localDir = "/Documents/06_current_quote";
+    $ let logLocation = "Documents/logs/quoteDownloader/";
 
 Settings for the macos process are found in /build/com.local.quoteDownloader.plist.
 Here you can change the name of the registered proccess, name, location of the script.
