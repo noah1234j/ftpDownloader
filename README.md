@@ -1,10 +1,10 @@
-#FTP Download to Specified Folder
+# FTP Download to Specified Folder
 
 This app was intended to run as a background process in macOS. 
 At 5PM on wednesday, it uses the date to select the filename. 
 It then downloads the file to a specified location.
 
-###Changing Settings
+### Changing Settings
 
 Main settings for this are found at the top of the index.js file
 
