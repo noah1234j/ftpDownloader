@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const scheduler = require("node-schedule");
 const ftp = require("basic-ftp");
 const fs = require('fs-extra');
 const path = require('path')
@@ -10,19 +9,17 @@ const os = require('os');
 let host = "216.251.155.90";
 let user = "shawn";
 let password = "wolt777";
-let localDir = "/Documents/06_current_quote";
+let localDir = "Documents/06_current_quote";
 let logLocation = "Documents/logs/quoteDownloader/";
 
 //Log Stuff
-let logLocation = path.join(os.homedir(), logLocation)
+logLocation = path.join(os.homedir(), logLocation)
 fs.ensureDirSync(logLocation)
 const logger = require('simple-node-logger').createSimpleLogger(path.join(logLocation, "debug.log"));
 log("Program Has Started")
+log("Bob is cook")
 
-// for date options see https://www.npmjs.com/package/node-schedule
-scheduler.scheduleJob("* * 17 * 4", () => { //Every Wednesday at 5pm
-    downloadQuote()
-})
+downloadQuote()
 
 //Functions
 async function downloadQuote() {
@@ -35,12 +32,13 @@ async function downloadQuote() {
         let now = new Date();
         let dirDate = date.format(now, 'MM MMMM YYYY');    // => '01 January 2019'
 
-        await client.cd(`/FTP-Share/6-Preservice Quotes/${dirDate}`)
+        await client.cd(`FTP-Share/6-Preservice Quotes/${dirDate}`)
 
         let fileDate = date.format(now, "YY-MMDD") // => '19-0129
         let fileList = await client.list() // => [object][object]
         let remoteFileName = (await resolveFileName(fileList, fileDate)) // => 19-0116(5-13)Works-Faith 11.mp3
         let localFileLocation = path.join(os.homedir(), localDir)
+        console.log(localFileLocation)
         let localFile = path.join(localFileLocation, remoteFileName)
         
         process.chdir(localFileLocation) //Changes the download locaiton

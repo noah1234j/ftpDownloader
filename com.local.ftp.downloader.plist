@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+    <!-- DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING -->
+    <dict>
+        <key>Label</key>
+        <!-- The label should be the same as the filename without the extension -->
+        <string>com.local.ftp.downloader</string>
+
+        <!-- Specify how to run your program here -->
+        <key>Program</key>
+        <string>/Users/wolt/Documents/01 Workplace William/Quote Downloader/ftpDownloader/build/quote-downloader</string>
+
+        <!-- Calendar Timing -->
+        <!-- Availiable tags are Month, Day, Weekday, Hour, Minute -->
+        <key>StartCalendarInterval</key>
+        <dict>
+            <key>Weekday</key>
+            <integer>3</integer>
+            <key>Hour</key>
+            <integer>17</integer>
+        </dict>
+    </dict>
+</plist>
